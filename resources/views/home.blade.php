@@ -1,0 +1,147 @@
+@extends('layouts.main')
+
+@section('content')
+    {{-- bagian product --}}
+    <div class="row justify-content-center">
+        <div class="col-lg">
+            <h1 class="text-center">Penanda</h1>
+            <p>Download bookmark khusus untuk web backend programmer dalam mengelola sumber daya yang dibutuhkan. mulai dari app-app untuk coding, documentasinya, framework, package, plugin, app-app frontend dan tools pendukung lainnya yang menunjang keseluruhan project yang akan dikembangkan, end to end, dari tools untuk bisnisnya sampai ke deploy.</p>
+        </div>
+    </div>
+    {{-- bagian download file --}}
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+
+            <h1 class="text-center">Bookmark yang tersedia</h1>
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">PHP Web Backend Developer Bookmark</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
+                  <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya.</p>
+                </div>
+                <div class="card-body">
+                  <a href="#" class="card-link">programmer</a>
+                  <a href="#" class="card-link">web developer</a>
+                  <a href="#" class="card-link">backend developer</a>
+                  <a href="#" class="card-link">PHP developer</a>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Web Backend Developer Bookmark</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
+                  <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP dan nodejs + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya.</p>
+                </div>
+                <div class="card-body">
+                  <a href="#" class="card-link">programmer</a>
+                  <a href="#" class="card-link">web developer</a>
+                  <a href="#" class="card-link">backend developer</a>
+                  <a href="#" class="card-link">PHP developer</a>
+                  <a href="#" class="card-link">nodejs developer</a>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Yudistira's Web Backend Developer Bookmark</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
+                  <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP dan nodejs + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya. + hiburan movies, anime, chart music.</p>
+                </div>
+                <div class="card-body">
+                  <a href="#" class="card-link">programmer</a>
+                  <a href="#" class="card-link">web developer</a>
+                  <a href="#" class="card-link">backend developer</a>
+                  <a href="#" class="card-link">PHP developer</a>
+                  <a href="#" class="card-link">nodejs developer</a>
+                  <a href="#" class="card-link">movies</a>
+                  <a href="#" class="card-link">anime</a>
+                  <a href="#" class="card-link">chart</a>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">PHP Web Backend Developer Bookmark</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
+                  <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya.</p>
+                </div>
+                <div class="card-body">
+                  <a href="#" class="card-link">programmer</a>
+                  <a href="#" class="card-link">web developer</a>
+                  <a href="#" class="card-link">backend developer</a>
+                  <a href="#" class="card-link">PHP developer</a>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Web Backend Developer Bookmark</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
+                  <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP dan nodejs + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya.</p>
+                </div>
+                <div class="card-body">
+                  <a href="#" class="card-link">programmer</a>
+                  <a href="#" class="card-link">web developer</a>
+                  <a href="#" class="card-link">backend developer</a>
+                  <a href="#" class="card-link">PHP developer</a>
+                  <a href="#" class="card-link">nodejs developer</a>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Yudistira's Web Backend Developer Bookmark</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
+                  <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP dan nodejs + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya. + hiburan movies, anime, chart music.</p>
+                </div>
+                <div class="card-body">
+                  <a href="#" class="card-link">programmer</a>
+                  <a href="#" class="card-link">web developer</a>
+                  <a href="#" class="card-link">backend developer</a>
+                  <a href="#" class="card-link">PHP developer</a>
+                  <a href="#" class="card-link">nodejs developer</a>
+                  <a href="#" class="card-link">movies</a>
+                  <a href="#" class="card-link">anime</a>
+                  <a href="#" class="card-link">chart</a>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    {{-- bagian how to use --}}
+    <div class="row">
+        <div class="col-lg">
+            <h1>How to use bookmark</h1>
+            <p>Cara menggunakan: download bookmark yang anda inginkan (dalam bentuk file html). Lalu import ke dalam bookmark yang ada di setting web browser(setiap browser mungkin memiliki sedikit perbedaan).</p>
+        </div>
+    </div>
+    {{-- bagian donation --}}
+    <div class="row justify-content-center">
+        <div class="col-lg">
+            <h1>Donasi sekarang</h1>
+            <p>Bantu kami untuk mengembangkan bookmark terbaik dengan berdonasi sejumlah manfaat yang anda rasakan</p>
+            
+        </div>
+    </div>
+@endsection
