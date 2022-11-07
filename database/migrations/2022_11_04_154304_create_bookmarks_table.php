@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("slug")->unique();
             $table->string("version");
-            // $table->foreignId("category_id");
+            $table->foreignId("category_id");
             $table->string("tags");
             $table->string("summary");
             $table->text("description");
