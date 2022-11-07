@@ -6,7 +6,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
           <a class="nav-link" href="/product">Product</a>
           <a class="nav-link" href="/documentation">Documentation</a>
           <a class="nav-link" href="/donation">Donation</a>
