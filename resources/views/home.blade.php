@@ -13,12 +13,13 @@
     {{-- bagian download file --}}
     <div class="row justify-content-center mb-4">
       <h1 class="text-center">Bookmark yang tersedia</h1>
-      <div class="col-lg-4 my-2">
+      @foreach ($bookmarks as $bookmark)
+        <div class="col-lg-4 my-2">
           <div class="card">
               <div class="card-body">
-                <h5 class="card-title">PHP Web Backend Developer Bookmark</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
-                <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya.</p>
+                <h5 class="card-title">{{ $bookmark->name }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Category: {{ $bookmark->category_id }}</h6>
+                <p class="card-text">{{ $bookmark->summary }}</p>
               </div>
               <div class="card-body">
                 <a href="#" class="card-link">programmer</a>
@@ -30,108 +31,10 @@
                   <a href="#" class="btn btn-primary">Download</a>
               </div>
           </div>
-      </div>
-      <div class="col-lg-4 my-2">
-          <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Web Backend Developer Bookmark</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
-                <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP dan nodejs + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya.</p>
-              </div>
-              <div class="card-body">
-                <a href="#" class="card-link">programmer</a>
-                <a href="#" class="card-link">web developer</a>
-                <a href="#" class="card-link">backend developer</a>
-                <a href="#" class="card-link">PHP developer</a>
-                <a href="#" class="card-link">nodejs developer</a>
-              </div>
-              <div class="card-body">
-                  <a href="#" class="btn btn-primary">Download</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-4 my-2">
-          <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Yudistira's Web Backend Developer Bookmark</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
-                <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP dan nodejs + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya. + hiburan movies, anime, chart music.</p>
-              </div>
-              <div class="card-body">
-                <a href="#" class="card-link">programmer</a>
-                <a href="#" class="card-link">web developer</a>
-                <a href="#" class="card-link">backend developer</a>
-                <a href="#" class="card-link">PHP developer</a>
-                <a href="#" class="card-link">nodejs developer</a>
-                <a href="#" class="card-link">movies</a>
-                <a href="#" class="card-link">anime</a>
-                <a href="#" class="card-link">chart</a>
-              </div>
-              <div class="card-body">
-                  <a href="#" class="btn btn-primary">Download</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-4 -my-2">
-          <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">PHP Web Backend Developer Bookmark</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
-                <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya.</p>
-              </div>
-              <div class="card-body">
-                <a href="#" class="card-link">programmer</a>
-                <a href="#" class="card-link">web developer</a>
-                <a href="#" class="card-link">backend developer</a>
-                <a href="#" class="card-link">PHP developer</a>
-              </div>
-              <div class="card-body">
-                  <a href="#" class="btn btn-primary">Download</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-4 my-2">
-          <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Web Backend Developer Bookmark</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
-                <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP dan nodejs + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya.</p>
-              </div>
-              <div class="card-body">
-                <a href="#" class="card-link">programmer</a>
-                <a href="#" class="card-link">web developer</a>
-                <a href="#" class="card-link">backend developer</a>
-                <a href="#" class="card-link">PHP developer</a>
-                <a href="#" class="card-link">nodejs developer</a>
-              </div>
-              <div class="card-body">
-                  <a href="#" class="btn btn-primary">Download</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-4 my-2">
-          <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Yudistira's Web Backend Developer Bookmark</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Category: programming</h6>
-                <p class="card-text">Bookmark untuk web backend programmer dengan penggunaan bahasa pemograman PHP dan nodejs + web frontend programmer + end to end, dari bisnisnya sampai deploy dari maintenence kedepanya. + hiburan movies, anime, chart music.</p>
-              </div>
-              <div class="card-body">
-                <a href="#" class="card-link">programmer</a>
-                <a href="#" class="card-link">web developer</a>
-                <a href="#" class="card-link">backend developer</a>
-                <a href="#" class="card-link">PHP developer</a>
-                <a href="#" class="card-link">nodejs developer</a>
-                <a href="#" class="card-link">movies</a>
-                <a href="#" class="card-link">anime</a>
-                <a href="#" class="card-link">chart</a>
-              </div>
-              <div class="card-body">
-                  <a href="#" class="btn btn-primary">Download</a>
-              </div>
-          </div>
-      </div>
+        </div>
+      @endforeach
     </div>
+
     {{-- bagian how to use --}}
     <div class="row justify-content-center mb-4">
         <div class="col-lg-8 text-center">
@@ -139,6 +42,7 @@
             <p>Cara menggunakan: download bookmark yang anda inginkan (dalam bentuk file html). Lalu import ke dalam bookmark yang ada di setting web browser(setiap browser mungkin memiliki sedikit perbedaan).</p>
         </div>
     </div>
+    
     {{-- bagian donation --}}
     <div class="row justify-content-center mb-4 text-center">
         <h1>Donasi sekarang</h1>
