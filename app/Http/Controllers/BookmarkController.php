@@ -9,9 +9,9 @@ class BookmarkController extends Controller
 {
     public function index()
     {
-        $bookmarks = Bookmark::all();
         return view('home', [
-            'bookmarks' => $bookmarks
+            'title' => 'Home',
+            'bookmarks' => Bookmark::all()
         ]);
     }
 }

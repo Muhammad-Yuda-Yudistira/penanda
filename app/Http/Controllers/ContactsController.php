@@ -8,6 +8,8 @@ class ContactsController extends Controller
 {
     public function index()
     {
-        return view('contacts');
+        return view('contacts', [
+            'title' => 'Contacts'
+        ]);
     }
 }

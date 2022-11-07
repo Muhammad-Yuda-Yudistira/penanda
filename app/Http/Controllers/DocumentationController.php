@@ -8,6 +8,8 @@ class DocumentationController extends Controller
 {
     public function index()
     {
-        return view('documentation');
+        return view('documentation', [
+            'title' => 'Documentation'
+        ]);
     }
 }
