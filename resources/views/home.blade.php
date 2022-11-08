@@ -16,20 +16,14 @@
       @foreach ($bookmarks as $bookmark)
         <div class="col-lg-4 my-2">
           <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{ $bookmark->name }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Category: {{ $bookmark->category_id }}</h6>
-                <p class="card-text">{{ $bookmark->summary }}</p>
-              </div>
-              <div class="card-body">
-                <a href="#" class="card-link">programmer</a>
-                <a href="#" class="card-link">web developer</a>
-                <a href="#" class="card-link">backend developer</a>
-                <a href="#" class="card-link">PHP developer</a>
-              </div>
-              <div class="card-body">
-                  <a href="/download/{{ $bookmark->slug }}" class="btn btn-primary">Download</a>
-              </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ $bookmark->name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Category: {{ $bookmark->category->name }}</h6>
+              <p class="card-text">{{ $bookmark->summary }}</p>
+            </div>
+            <div class="card-body">
+                <a href="/download/{{ $bookmark->slug }}" class="btn btn-primary">Download</a>
+            </div>
           </div>
         </div>
       @endforeach

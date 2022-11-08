@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string("version");
             $table->string("name_file");
             $table->foreignId("category_id");
-            $table->string("tags");
             $table->string("summary");
             $table->text("description");
             $table->timestamps();
