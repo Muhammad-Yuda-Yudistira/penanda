@@ -14,4 +14,12 @@ class BookmarkController extends Controller
             'bookmarks' => Bookmark::all()
         ]);
     }
+    public function download(Bookmark $bookmark)
+    {
+        $file = public_path('/files/').$bookmark->name_file;
+        $header = array(
+            "Content-Type: application/html"
+        );
+        return response()->download($file, $bookmark->name.".html", $header);
+    }
 }

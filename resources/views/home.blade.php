@@ -28,7 +28,7 @@
                 <a href="#" class="card-link">PHP developer</a>
               </div>
               <div class="card-body">
-                  <a href="#" class="btn btn-primary">Download</a>
+                  <a href="/download/{{ $bookmark->slug }}" class="btn btn-primary">Download</a>
               </div>
           </div>
         </div>

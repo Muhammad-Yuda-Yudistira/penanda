@@ -23,5 +23,6 @@ Route::get('/product', [ProductController::class, 'index']);
 Route::get('/documentation', [DocumentationController::class, 'index']);
 Route::get('/donation', [DonationController::class, 'index']);
 Route::get('/contacts', [ContactsController::class, 'index']);
+Route::get('/download/{bookmark:slug}', [BookmarkController::class, 'download']);
 
 
