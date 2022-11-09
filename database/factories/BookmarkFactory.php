@@ -20,7 +20,7 @@ class BookmarkFactory extends Factory
             "name" => fake()->sentence(3),
             "slug" => fake()->slug(),
             "version" => fake()->semver(),
-            "name_file" => "bookmark.html",
+            "name_file" => "backend developer bookmark.html",
             "category_id" => mt_rand(1,3),
             "summary" => fake()->paragraph(),
             "description" => fake()->paragraph(10, 20)

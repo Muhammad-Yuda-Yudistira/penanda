@@ -20,6 +20,6 @@ class BookmarkController extends Controller
         $header = array(
             "Content-Type: application/html"
         );
-        return response()->download($file, $bookmark->name.".html", $header);
+        return response()->download($file, $bookmark->slug.".html", $header);
     }
 }
