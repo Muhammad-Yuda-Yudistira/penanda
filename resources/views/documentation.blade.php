@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="row justify-content-center text-center">
+    <div class="row justify-content-center text-center lead">
         <div class="col-lg-8">
             <h1>Documentation</h1>
             <h2>Sebelum menggunakan bookmark delete dahulu bookmark didalam web browser yang anda gunakan</h2>

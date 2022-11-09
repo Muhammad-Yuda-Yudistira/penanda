@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Bookmark::factory(6)->create();
-        Category::factory(3)->create();
+        Bookmark::factory(1)->create();
+        Category::factory(1)->create();
     }
 }

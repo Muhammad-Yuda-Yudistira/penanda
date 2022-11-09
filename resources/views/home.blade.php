@@ -2,7 +2,7 @@
 
 @section('content')
     {{-- bagian product --}}
-    <div class="row justify-content-center mb-4">
+    <div class="row justify-content-center mb-4 lead">
         <div class="col-lg-8">
             <h1 class="text-center">Penanda</h1>
             <p>Download bookmark khusus untuk web backend programmer dalam mengelola sumber daya yang dibutuhkan. mulai dari app-app untuk coding, documentasinya, framework, package, plugin, app-app frontend dan tools pendukung lainnya yang menunjang keseluruhan project yang akan dikembangkan, end to end, dari tools untuk bisnisnya sampai ke deploy.</p>
@@ -11,8 +11,8 @@
 
 
     {{-- bagian download file --}}
-    <div class="row justify-content-center mb-4">
-      <h1 class="text-center">Bookmark yang tersedia</h1>
+    <div class="row justify-content-center mb-4 text-center lead">
+      <h1 class="">Bookmark yang tersedia</h1>
       @foreach ($bookmarks as $bookmark)
         <div class="col-lg-4 my-2">
           <div class="card">
@@ -22,7 +22,7 @@
               <p class="card-text">{{ $bookmark->summary }}</p>
             </div>
             <div class="card-body">
-                <a href="/download/{{ $bookmark->slug }}" class="btn btn-primary">Download</a>
+                <a href="/download/{{ $bookmark->slug }}" class="btn btn-info text-light text">Download</a>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
     </div>
 
     {{-- bagian how to use --}}
-    <div class="row justify-content-center mb-4">
+    <div class="row justify-content-center mb-4 lead">
         <div class="col-lg-8 text-center">
             <h1>Bagaimana cara menggunakan bookmark ini</h1>
             <p>Cara menggunakan: download bookmark yang anda inginkan (dalam bentuk file html). Lalu import ke dalam bookmark yang ada di setting web browser(setiap browser mungkin memiliki sedikit perbedaan).</p>
@@ -38,7 +38,7 @@
     </div>
     
     {{-- bagian donation --}}
-    <div class="row justify-content-center mb-4 text-center">
+    <div class="row justify-content-center mb-4 text-center lead">
         <h1>Donasi sekarang</h1>
         <p>Bantu kami untuk mengembangkan bookmark terbaik dengan berdonasi sejumlah manfaat yang anda rasakan</p>
         <div class="col-lg-6">
@@ -62,7 +62,7 @@
                 <label for="message" class="form-label">Tulis pesan anda</label>
                 <textarea class="form-control" id="message" rows="3" name="message"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Kirim</button>
+              <button type="submit" class="btn btn-info text-light">Kirim</button>
             </form>
         </div>
     </div>

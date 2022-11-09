@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="row justify-content-center text-center">
+    <div class="row justify-content-center text-center lead">
         <div class="col-lg-8">
             <h1>Donation</h1>  
             <p>
@@ -9,7 +9,7 @@
             </p>  
         </div>
     </div>
-    <div class="row justify-content-center mb-4 text-center">
+    <div class="row justify-content-center mb-4 text-center lead">
         <h1>Donasi sekarang</h1>
         <p>Bantu kami untuk mengembangkan bookmark terbaik dengan berdonasi sejumlah manfaat yang anda rasakan</p>
         <div class="col-lg-6">
@@ -33,7 +33,7 @@
                 <label for="message" class="form-label">Tulis pesan anda</label>
                 <textarea class="form-control" id="message" rows="3" name="message"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Kirim</button>
+              <button type="submit" class="btn btn-info text-light">Kirim</button>
             </form>
         </div>
     </div>
