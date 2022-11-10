@@ -1,14 +1,48 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="row justify-content-center">
+<div class="row justify-content-center text-center">
         <div class="col-lg-8">
-            <h1 class="text-center">Product</h1> 
+            <h1 class="mt-4">Product</h1> 
+            <h2 class="my-3">Kenapa kita butuh bookmark</h2>
             <p class="lead">
-                Kenapa kita butuh bookmark: Kenapa bookmark begitu penting untuk seorang programmer apapun? Menurut pengalaman saya belajar coding sekitar 3 tahun.. pertama saya mencoba memahamin konsep dengan baik, saya mengulang-ulang materi untuk benar-benar memahami konsepnya, ternyata hal itu tidak membantu saya saat praktek, saya tidak tahu harus memulai dari mana dan apa aja element yang harus saya gunakan (terlalu banyak hal yang harus saya pilih dan pertimbangkan). Akhirnya saya sadar mengetahui konsep saja tidak membuat saya jago coding. Kedua saya mencoba memahi konsep dengan baik + menghafal element – elementnya, dan ternyata setelah beberapa bulan apa yang telah saya hafalkan itu banyak yang lupa lagi, ternyata cara ini pun belum berhasil membuat saya jadi jagoan coding. Lalu saya mencoba cara ketiga, memahami konsep + memahami documentasi, dengan car aini saya tidak perlu banyak menghafalkan semamunya saja dalam menghafal, semua sudah tersedia didokumentasinya selama saya memahaminya, apakah cara ini berhasil? Tidak juga, terlalu banyak dokumentasi yang harus saya ingat saat saya menggunakan banyak teknologi pada website saya, bahkan saya banyak meninggalkan teknologi yang akan diterapkan pada website saya karena setelah beberapa bulan saya lupa website – website dari teknologi tersebut. Dan ini adalah cara saat ini yang saya gunakan, saya Kelola segala hal yang saya butuhkan untuk coding yang dimana mereka tersedia di sebuah website untuk di download dan di baca, kuncinya adalah mengelola bookmark di dalam web browser, segala hal dari yang terkecil seperti extension untuk code editor, web browser sampai yang paling dibutuhkan seperti framework dan dokumentasi harus saya Kelola dengan begitu beberapa puluh tahun kedepan saya tidak akan lupa apapun yang saya butuhkan Ketika memang dibutuhkan untuk diterapkan pada website yang akan saya kembangkan, saya tidak perlu mengingat segala hal yang saya butuhkan yang jumlahnya puluhan di otak saya semuanya tersedia dengan rapih didalam bookmark, saya hanya perlu menggambil saya saya butuhkan, teknologi yang sudah beberapa tahun tidak saya terapkan, saya dapat menerapkannya Kembali karena semuanya tersimpan rapih didalam bookmark. Bookmark adalah sebuah ruangan yang akan kita isi dengan banyak hal yang saat kita semakin jago coding semakin banyak pula yang akan kita ketahui, ini adalah manfaat jangka Panjang mungkin seumur hidup kita akan coding dan sebuah cara yang paling efisien untuk menjadi ahli. 
+                Untuk dapat membaca dokumentasi kita perlu memehami konsep dan hafalan. Jika dokumentasi yang anda ketahui sudah terlalu banyak anda membutuhkan bookmark untuk mengelolanya.  
             </p>
             <p class="lead">
-                Keuntungan: anda tak perlu mengingat website apa saja yang akan diakses, kerjakan apa yang anda akan kerjakan, simpan seluruh ingatan itu ke dalam bookmarks yang rapih. Semakin baik anda mengelola bookmark anda semakin mudah mengakses website yang anda butuhkan. Terkadang kita lupa nama website atau url website yang asli, yang jarang diakses, yang sudah lama tidak diakses, penyimpanan yang baik akan membantu anda dikemudian untuk mengaksesnya lagi.
+                Lupa konsep lihat dokumentasi, cari dokumentasi di dalam bookmark. 
+            </p>
+            <p class="lead">
+                Bookmark adalah dokumentasi untuk mengelola dokumentasi dan sumber dayanya.
+            </p>
+            <p class="lead">
+                Sumber daya adalah plugin, library, package, framework, applications, code editor, dll. 
+            </p>
+            <p class="lead">
+                Sumber daya yang kita Kelola dengan baik akan memberikan keuntungan jangka Panjang. 
+            </p>
+            <p class="lead">
+                Butuh waktu lebih sedikit untuk jadi ahli programmer jika anda ahli membaca dokumentasi dan ahli mengelola bookmark. 
+            </p>
+            <p class="lead">
+                semakin kita belajar lebih banyak semakin banyak pula sumber daya dan dokumentasi yang akan kita kumpulkan.  
+            </p>
+            <p class="lead">
+                Bookmark adalah sebuah ruang yang akan kita isi banyak sumber daya dan dokumentasinya.  
+            </p>
+            <p class="lead">
+                Jangan buang waktu anda untuk mengingat situs sumber daya dan dokumentasinya biarkan bookmark yang melakukannya untuk anda. Saatnya anda kreatif dan inovatif dengan codingan anda. 
+            </p>
+            <p class="lead">
+                Semakin anda jarang menggunakan Kembali hal yang sudah anda pelajari, semakin keras anda belajar itu Kembali. dimana anda mencarinya kembali? Mungkin anda sudah lupa jika tidak anda kelola didalam bookmark. 
+            </p>
+            <p class="lead">
+                Terkadang kita belajar hal terntentu hanya diterapkan sekali saja seperti install code editor, jika kita menyimpannya kita dapat kembali karena itu sudah tersimpan dengan baik. 
+            </p>
+            <p class="lead">
+                Google itu adalah perpustakaan yang semuanya ada. Tetapi mereka tersusun tanpa nama. Anda harus tahu nama yang akan and acari atau mendekati apa yang anda cari. Jangan khawatir karena anda dapat memberi mereka nama dengan bookmark untuk membantu anda mencari dengan lebih baik. 
+            </p>
+            <p class="lead">
+                Jika anda memahami konsep dan hafalan untuk pertama kali mungkin anda akan lupa hampir seluruhnya setelah 1 bulan. Jika anda memanfaatkan dokumentasi anda tidak akan pernah lupa lagi selama bertahun-tahun asalkan anda dapat memahami dokumentasinya. Saat anda memilih teknologi ini atau itu dokumentasinya menjadi semakin banyak, bagaimana anda tahu dimana situs dokumentasinya jika anda mengetahui ratusan teknologi untuk dipilih? Kuncinya adalah bagaiman anda mendokumentasikan dokumentasi dan sumber daya dengan baik. 
             </p>
         </div>
     </div> 

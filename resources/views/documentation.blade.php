@@ -4,7 +4,7 @@
     <div class="row justify-content-center text-center lead">
         <div class="col-lg-8">
             <h1>Documentation</h1>
-            <h2>Sebelum menggunakan bookmark delete dahulu bookmark didalam web browser yang anda gunakan</h2>
+            <h3>Sebelum menggunakan bookmark delete dahulu bookmark didalam web browser yang anda gunakan</h3>
             <img src="img/documentation/bookmark menu.png" alt="bookmark menu" class="img-fluid">
             <p>
                 Step 1: Jika web browser anda sudah ada bookmarknya silahkan hapus dulu supaya tidak tercampur, kecuali anda menginginkannya.
@@ -21,7 +21,7 @@
             <p>
                 Step 4: seleksi semua bookmark dengan menekan tombol ctrl+a (selected all) setelah itu akan muncul tombol delete di kanan atas dan klik.
             </p>
-            <h2>Cara import bookmark ke dalam web browser google chrome</h2>
+            <h3>Cara import bookmark ke dalam web browser google chrome</h3>
             <img src="img/documentation/bookmark has deleted.png" alt="bookmark has deleted" class="img-fluid">
             <p>
                 Step 1: jika berhasil didelete halaman bookmark akan kosong. Sekarang siap untuk import bookmark.
@@ -37,6 +37,40 @@
             <img src="img/documentation/bookmark has imported.png" alt="bookmark has imported" class="img-fluid">
             <p>
                 Step 4: jika bookmark muncul dihalaman selamat bookmark berhasil diimport dan selesai.
+            </p>
+            <h3>Struktur bookmark</h3>
+            <img src="img/documentation/bookmark menu zoom.png" alt="bookmark menu zoom">
+            <h5>Private</h5>
+            <p class="lead">
+                Untuk mengelola hal yang probadi biasanaya berupa artike dan sangat berbeda isinya untuk tiap orang.
+            </p>
+            <h5>Contacts</h5>
+            <p class="lead">
+                Segala hal komunkasi yang dapat kita lakukan, tidak perlu memilki semuanya. Gunakan yang anda butuhkan saja.
+            </p>
+            <h5>Learnig path</h5>
+            <p class="lead">
+                Jalur belajar atau roadmap untuk memandu anda belajar programming
+            </p>
+            <h5>Development</h5>
+            <p class="lead">
+                Seluruh sumber daya yang dikelompokan dengan role tertentu, sebagai seorang backend anda dapat menggunakan sumber daya dari role lain seperlunya.
+            </p>
+            <h5>Exercise</h5>
+            <p class="lead">
+                Tempat anda dapat belajar coding untuk dapat sertifikat online dan kontes
+            </p>
+            <h5>Work</h5>
+            <p class="lead">
+                Anda dapat menemukan situs pencari kerja baik kerja online maupun diperusahaan terdekat.
+            </p>
+            <h5>Hiburan</h5>
+            <p class="lead">
+                Untuk mencari hiburan saat senggang, disesuaikan saja sesuai kesukaan anda.
+            </p>
+            <h5>General</h5>
+            <p class="lead">
+                Temukan tools sederhana dari situs yang dapat dipercaya.
             </p>
         </div>
     </div>
