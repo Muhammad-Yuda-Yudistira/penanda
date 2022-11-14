@@ -17,12 +17,11 @@ class BookmarkFactory extends Factory
     public function definition()
     {
         return [
-            "name" => "Web Backend Developer Bookmark",
-            "slug" => "web-backend-developer-bookmark",
+            "name" => "web backend developer bookmark",
+            "slug" => fake()->slug(),
             "version" => fake()->semver(),
-            "name_file" => "web backend developer bookmark.html",
             "category_id" => 1,
-            "summary" => "Bookmark untuk web backend developer",
+            "summary" => fake()->sentence(),
             "description" => fake()->paragraph(10, 20)
         ];
     }

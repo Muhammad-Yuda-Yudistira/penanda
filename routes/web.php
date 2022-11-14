@@ -18,11 +18,22 @@ use App\Http\Controllers\DocumentationController;
 |
 */
 
+// halaman home dan menu
 Route::get('/', [BookmarkController::class, 'index']);
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/documentation', [DocumentationController::class, 'index']);
 Route::get('/donation', [DonationController::class, 'index']);
 Route::get('/contacts', [ContactsController::class, 'index']);
 Route::get('/download/{bookmark:slug}', [BookmarkController::class, 'download']);
+// halaman seluruh bookmark
+Route::get('/bookmarks', [BookmarkController::class, 'getAll']);
+// membuat halaman detail bookmark
+Route::get('/bookmarks/{bookmark:slug}', [BookmarkController::class, 'show']);
+// halaman tambah bookmark
+Route::get('/createBookmark', [BookmarkController::class, 'createBookmark']);
+// proses tambah bookmark
+Route::post('/bookmarks', [BookmarkController::class, 'create']);
+// halaman update bookmark
+// proses update bookmark
 
 

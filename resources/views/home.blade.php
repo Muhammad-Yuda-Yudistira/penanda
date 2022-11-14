@@ -14,18 +14,20 @@
     <div class="row justify-content-center mb-4 text-center lead">
       <h1 class="">Bookmark yang tersedia</h1>
       @foreach ($bookmarks as $bookmark)
-        <div class="col-lg-4 my-2">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{{ $bookmark->name }}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Category: {{ $bookmark->category->name }}</h6>
-              <p class="card-text">{{ $bookmark->summary }}</p>
-            </div>
-            <div class="card-body">
-                <a href="/download/{{ $bookmark->slug }}" class="btn btn-info text-light text">Download</a>
-            </div>
+          <div class="col-lg-4 my-2">
+              <div class="card">
+                <div class="card-body">
+                  <a href="bookmarks/{{ $bookmark->slug }}">
+                    <h5 class="card-title">{{ $bookmark->name }}</h5>
+                  </a>
+                  <h6 class="card-subtitle mb-2 text-muted">Category: {{ $bookmark->category->name }}</h6>
+                  <p class="card-text">{{ $bookmark->summary }}</p>
+                </div>
+                <div class="card-body">
+                    <a href="/download/{{ $bookmark->slug }}" class="btn btn-info text-light text">Download</a>
+                </div>
+              </div>
           </div>
-        </div>
       @endforeach
     </div>
 

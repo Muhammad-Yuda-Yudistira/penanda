@@ -16,10 +16,35 @@ class BookmarkController extends Controller
     }
     public function download(Bookmark $bookmark)
     {
-        $file = public_path('/files/').$bookmark->name_file;
+        $file = public_path('/files/').$bookmark->name.".html";
         $header = array(
             "Content-Type: application/html"
         );
         return response()->download($file, $bookmark->slug.".html", $header);
+    }
+    public function getAll()
+    {
+        return view('bookmarks', [
+            'title' => 'Bookmarks',
+            'bookmarks' => Bookmark::all()
+        ]);
+    }
+    public function show(Bookmark $bookmark)
+    {
+        return view('bookmark', [
+            'title' => 'Bookmark',
+            'bookmark' => $bookmark
+        ]);
+    }
+    public function createBookmark()
+    {
+        return view('createBookmark', [
+            'title' => 'Create Bookmark'
+        ]);
+    }
+    public function create($bookmark)
+    {
+        Bookmark::create($bookmark);
+        return redirect('/bookmarks');
     }
 }

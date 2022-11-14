@@ -24,7 +24,16 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Bookmark::factory(1)->create();
+        Bookmark::create([
+            "name" => "Web Backend Developer Bookmark",
+            "slug" => "web-backend-developer-bookmark",
+            "version" => 1,
+            "category_id" => 1,
+            "summary" => "Bookmark untuk web backend developer",
+            "description" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, a voluptatem voluptatum quisquam quae ipsa saepe maiores dignissimos nostrum explicabo minus velit aliquam autem illo laborum maxime? Iusto, delectus illum?"
+            ]);
+
+        Bookmark::factory(9)->create();
         Category::factory(1)->create();
     }
 }
