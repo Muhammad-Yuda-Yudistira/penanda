@@ -39,7 +39,7 @@
                 Step 4: jika bookmark muncul dihalaman selamat bookmark berhasil diimport dan selesai.
             </p>
             <h3>Struktur bookmark</h3>
-            <img src="img/documentation/bookmark menu zoom.png" alt="bookmark menu zoom">
+            <img src="img/documentation/bookmark menu zoom.png" alt="bookmark menu zoom" class="img-fluid">
             <h5>Private</h5>
             <p class="lead">
                 Untuk mengelola hal yang probadi biasanaya berupa artike dan sangat berbeda isinya untuk tiap orang.
