@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bookmark;
 use Illuminate\Http\Request;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class BookmarkController extends Controller
 {
@@ -16,7 +17,7 @@ class BookmarkController extends Controller
     }
     public function download(Bookmark $bookmark)
     {
-        $file = public_path('/files/').$bookmark->name.".html";
+        $file = public_path('/files/').$bookmark->slug.".html";
         $header = array(
             "Content-Type: application/html"
         );
@@ -36,15 +37,32 @@ class BookmarkController extends Controller
             'bookmark' => $bookmark
         ]);
     }
-    public function createBookmark()
+    public function create()
     {
-        return view('createBookmark', [
+        return view('create', [
             'title' => 'Create Bookmark'
         ]);
     }
-    public function create($bookmark)
+    public function checkSlug(Request $request)
     {
-        Bookmark::create($bookmark);
-        return redirect('/bookmarks');
+        $slug = SlugService::createSlug(Bookmark::class, 'slug', $request->name);
+        return response()->json([ 'slug' => $slug ]);
+    }
+    public function store(Request $request)
+    {
+        // $bookmark = [
+        //     'name' => $request->name,
+        //     'slug' => $request->slug,
+        //     'version' => $request->version,
+        //     'file' => $request->file,
+        //     'summary' => $request->summary,
+        //     'description' => $request->description
+        // ];
+        // $category = [
+        //     'name' => $request->category
+        // ];
+        return $request;
+        // Bookmark::create($request);
+        // return redirect('/bookmarks');
     }
 }

@@ -27,13 +27,15 @@ Route::get('/contacts', [ContactsController::class, 'index']);
 Route::get('/download/{bookmark:slug}', [BookmarkController::class, 'download']);
 // halaman seluruh bookmark
 Route::get('/bookmarks', [BookmarkController::class, 'getAll']);
+// halaman tambah bookmark
+Route::get('/bookmarks/checkSlug', [BookmarkController::class, 'checkSlug']);
+Route::get('/bookmarks/create', [BookmarkController::class, 'create']);
 // membuat halaman detail bookmark
 Route::get('/bookmarks/{bookmark:slug}', [BookmarkController::class, 'show']);
-// halaman tambah bookmark
-Route::get('/createBookmark', [BookmarkController::class, 'createBookmark']);
 // proses tambah bookmark
-Route::post('/bookmarks', [BookmarkController::class, 'create']);
+Route::post('/bookmarks', [BookmarkController::class, 'store']);
 // halaman update bookmark
 // proses update bookmark
+// proses delete
 
 

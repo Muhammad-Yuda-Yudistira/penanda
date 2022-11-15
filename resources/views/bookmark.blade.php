@@ -3,7 +3,7 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-lg-8">
-        <h1>Bookmarks Management</h1>
+        <h1>Detail Bookmark</h1>
         <table class="table table-info table-hover table-striped-columns table-sm table-borderless">
             <thead>
               <tr>

@@ -4,7 +4,7 @@
 <div class="row justify-content-center">
     <div class="col-lg-8">
         <h1>Bookmarks Management</h1>
-        <a class="btn btn-info text-light mt-2 mb-3" href="/createBookmark" role="button">Tambahkan Bookmark Baru</a>
+        <a class="btn btn-info text-light mt-2 mb-3" href="/bookmarks/create" role="button">Tambahkan Bookmark Baru</a>
         <table class="table table-info table-striped table-hover table-bordered border-primary table-sm">
             <thead>
               <tr>
