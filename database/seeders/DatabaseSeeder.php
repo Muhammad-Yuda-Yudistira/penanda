@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             "slug" => "web-backend-developer-bookmark",
             "version" => 1,
             "category_id" => 1,
+            "file" => "web-backend-developer-bookmark.html",
             "summary" => "Bookmark untuk web backend developer",
             "description" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, a voluptatem voluptatum quisquam quae ipsa saepe maiores dignissimos nostrum explicabo minus velit aliquam autem illo laborum maxime? Iusto, delectus illum?"
             ]);

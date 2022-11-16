@@ -11,6 +11,8 @@ class Bookmark extends Model
     use HasFactory;
     use Sluggable;
 
+    protected $guarded = ["id"];
+
     public function category() 
     {
         return $this->belongsTo(Category::class);

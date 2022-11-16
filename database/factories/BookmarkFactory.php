@@ -21,6 +21,7 @@ class BookmarkFactory extends Factory
             "slug" => fake()->slug(),
             "version" => fake()->semver(),
             "category_id" => 1,
+            "file" => "web-backend-developer-bookmark.html",
             "summary" => fake()->sentence(),
             "description" => fake()->paragraph(10, 20)
         ];

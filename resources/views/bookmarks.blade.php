@@ -12,7 +12,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Category</th>
                 <th scope="col">Summary</th>
-                <th scope="col">Actions</th>
+                <th scope="col" colspan="3">Actions</th>
               </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -23,6 +23,8 @@
                   <td>{{ $bookmark->category->name }}</td>
                   <td>{{ $bookmark->summary }}</td>
                   <td><a href="/bookmarks/{{ $bookmark->slug }}" class="badge text-bg-info text-light rounded-pill">Detail</a></td>
+                  <td><a href="/bookmarks/update/{{ $bookmark->slug }}" class="badge text-bg-warning text-light rounded-pill">Update</a></td>
+                  <td><a href="#" class="badge text-bg-danger text-light rounded-pill">Delete</a></td>
                 </tr>
             @endforeach
             </tbody>

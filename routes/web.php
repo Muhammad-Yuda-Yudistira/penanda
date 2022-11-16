@@ -30,12 +30,14 @@ Route::get('/bookmarks', [BookmarkController::class, 'getAll']);
 // halaman tambah bookmark
 Route::get('/bookmarks/checkSlug', [BookmarkController::class, 'checkSlug']);
 Route::get('/bookmarks/create', [BookmarkController::class, 'create']);
+// halaman update bookmark
+Route::get('/bookmarks/update/{bookmark:slug}', [BookmarkController::class, 'update']);
 // membuat halaman detail bookmark
 Route::get('/bookmarks/{bookmark:slug}', [BookmarkController::class, 'show']);
 // proses tambah bookmark
 Route::post('/bookmarks', [BookmarkController::class, 'store']);
-// halaman update bookmark
 // proses update bookmark
+Route::put('/bookmarks/{bookmark:slug}', [BookmarkController::class, 'storeUpdate']);
 // proses delete
 
 
