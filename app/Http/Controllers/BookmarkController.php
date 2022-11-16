@@ -93,4 +93,9 @@ class BookmarkController extends Controller
                     ->update($newBookmark);
         return redirect('/bookmarks');
     }
+    public function delete(Bookmark $bookmark)
+    {
+        Bookmark::destroy($bookmark->id);
+        return redirect('/bookmarks');
+    }
 }

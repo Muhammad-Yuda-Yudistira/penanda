@@ -39,5 +39,6 @@ Route::post('/bookmarks', [BookmarkController::class, 'store']);
 // proses update bookmark
 Route::put('/bookmarks/{bookmark:slug}', [BookmarkController::class, 'storeUpdate']);
 // proses delete
+Route::delete('/bookmarks/{bookmark:slug}', [BookmarkController::class, 'delete']);
 
 
