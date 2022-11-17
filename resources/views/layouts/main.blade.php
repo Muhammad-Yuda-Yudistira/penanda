@@ -8,6 +8,10 @@
     {{-- trix editor --}}
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0-beta.0/dist/trix.css">
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.0-beta.0/dist/trix.umd.min.js"></script>
+    {{-- bootstrap icons --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    {{-- my style --}}
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 

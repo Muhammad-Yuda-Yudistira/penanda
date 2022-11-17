@@ -14,6 +14,9 @@
           <a class="nav-link {{ $title === "Donation" ? "active" : "" }}" href="/donation">Donation</a>
           <a class="nav-link {{ $title === "Contacts" ? "active" : "" }}" href="/contacts">Contacts</a>
         </div>
+        <div class="navbar-nav ms-auto">
+          <a href="/login" class="nav-link {{ $title === "Login" ? "active" : "" }}"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+        </div>
       </div>
     </div>
   </nav>

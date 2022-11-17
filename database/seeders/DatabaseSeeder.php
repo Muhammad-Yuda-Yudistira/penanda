@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\User;
 use App\Models\Bookmark;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        User::factory(5)->create();
         Bookmark::create([
             "name" => "Web Backend Developer Bookmark",
             "slug" => "web-backend-developer-bookmark",
@@ -33,7 +35,6 @@ class DatabaseSeeder extends Seeder
             "summary" => "Bookmark untuk web backend developer",
             "description" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, a voluptatem voluptatum quisquam quae ipsa saepe maiores dignissimos nostrum explicabo minus velit aliquam autem illo laborum maxime? Iusto, delectus illum?"
             ]);
-
         Bookmark::factory(9)->create();
         Category::factory(1)->create();
     }
