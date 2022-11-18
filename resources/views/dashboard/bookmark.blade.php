@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('dashboard.layouts.main')
 
 @section('content')
 <div class="row justify-content-center">
@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Description:</th>
-                  <td>{{ $bookmark->description }}</td>
+                  <td>{!! $bookmark->description !!}</td>
                 </tr>
             </tbody>
           </table>

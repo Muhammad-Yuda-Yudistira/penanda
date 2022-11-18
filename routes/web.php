@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DocumentationController;
-use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::get('/documentation', [DocumentationController::class, 'index']);
 Route::get('/donation', [DonationController::class, 'index']);
 Route::get('/contacts', [ContactsController::class, 'index']);
 Route::get('/download/{bookmark:slug}', [BookmarkController::class, 'download']);
-// management bookmark
+// general bookmark
 Route::get('/bookmarks', [BookmarkController::class, 'getAll']);
 Route::get('/bookmarks/checkSlug', [BookmarkController::class, 'checkSlug']);
 Route::get('/bookmarks/create', [BookmarkController::class, 'create']);
@@ -36,6 +37,13 @@ Route::post('/bookmarks', [BookmarkController::class, 'store']);
 Route::put('/bookmarks/{bookmark:slug}', [BookmarkController::class, 'storeUpdate']);
 Route::delete('/bookmarks/{bookmark:slug}', [BookmarkController::class, 'delete']);
 // system user
-Route::get('/register', [UserController::class, 'index']);
+Route::get('/register', [UserController::class, 'index'])->middleware('guest');
 Route::post('/register', [UserController::class, 'register']);
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->middleware('guest')->name('login');
+Route::post('/login', [UserController::class, 'authenticate']);
+Route::post('/logout', [UserController::class, 'logout']);
+// management bookmark
+Route::get('/dashboard', function() {
+    return view('dashboard.index');
+})->middleware('auth');
+Route::get('/dashboard/bookmarks', [BookmarkController::class, 'getAll']);

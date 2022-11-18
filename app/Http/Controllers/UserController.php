@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -20,7 +21,7 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'username' => ['required', 'unique:users', 'min:3', 'max:255'],
             'email' => 'required|unique:users|email:dns',
-            'password' => 'required|min:3|max:255'
+            'password' => 'required|min:5|max:255'
         ]);
         // $validateData['password'] = bcrypt($validateData['password']);
         $validateData['password'] = Hash::make($validateData['password']);
@@ -33,5 +34,30 @@ class UserController extends Controller
         return view('login', [
             'title' => 'Login'
         ]);
+    }
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email:dns'],
+            'password' => ['required', 'min:5'],
+        ]);
+ 
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+ 
+            return redirect()->intended('/dashboard');
+        }
+ 
+        return back()->with('failed', 'Login failed!');
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+ 
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return redirect('/');
     }
 }

@@ -26,21 +26,21 @@ class BookmarkController extends Controller
     }
     public function getAll()
     {
-        return view('bookmarks', [
+        return view('dashboard.bookmarks', [
             'title' => 'Bookmarks',
             'bookmarks' => Bookmark::all()
         ]);
     }
     public function show(Bookmark $bookmark)
     {
-        return view('bookmark', [
+        return view('dashboard.bookmark', [
             'title' => 'Bookmark',
             'bookmark' => $bookmark
         ]);
     }
     public function create()
     {
-        return view('create', [
+        return view('dashboard.create', [
             'title' => 'Create Bookmark'
         ]);
     }
@@ -66,11 +66,11 @@ class BookmarkController extends Controller
         $bookmark["category_id"] = 1;
         Category::create($category);
         Bookmark::create($bookmark);
-        return redirect('/bookmarks');
+        return redirect('/dashboard/bookmarks');
     }
     public function update(Bookmark $bookmark)
     {
-        return view('update', [
+        return view('dashboard.update', [
             'title' => 'Update Bookmark',
             'bookmark' => $bookmark
         ]);
@@ -91,11 +91,11 @@ class BookmarkController extends Controller
         ];
         Bookmark::where('id', $bookmark->id)
                     ->update($newBookmark);
-        return redirect('/bookmarks');
+        return redirect('/dashboard/bookmarks');
     }
     public function delete(Bookmark $bookmark)
     {
         Bookmark::destroy($bookmark->id);
-        return redirect('/bookmarks');
+        return redirect('/dashboard/bookmarks');
     }
 }

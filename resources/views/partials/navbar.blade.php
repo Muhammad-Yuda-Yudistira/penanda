@@ -14,9 +14,29 @@
           <a class="nav-link {{ $title === "Donation" ? "active" : "" }}" href="/donation">Donation</a>
           <a class="nav-link {{ $title === "Contacts" ? "active" : "" }}" href="/contacts">Contacts</a>
         </div>
-        <div class="navbar-nav ms-auto">
-          <a href="/login" class="nav-link {{ $title === "Login" ? "active" : "" }}"><i class="bi bi-box-arrow-in-right"></i>Login</a>
-        </div>
+        @auth
+          <div class="navbar-nav ms-auto nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Welcome back, {{ auth()->user()->name }}
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <form action="/logout" method="post">
+                  @csrf
+                  <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        @else
+          <div class="navbar-nav ms-auto">
+            <a href="/login" class="nav-link {{ $title === "Login" ? "active" : "" }}"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+          </div>
+        @endauth
       </div>
     </div>
   </nav>
