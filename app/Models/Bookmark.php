@@ -26,4 +26,12 @@ class Bookmark extends Model
             ]
         ];
     }
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function($query, $search) {
+            return $query->where('name', 'like', '%'. $search . '%')
+                    ->orWhere('description', 'like', '%' . $search . '%');
+        });
+    }
 }

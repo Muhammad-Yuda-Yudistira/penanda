@@ -13,6 +13,16 @@
     {{-- bagian download file --}}
     <div class="row justify-content-center mb-4 text-center lead">
       <h1 class="">Bookmark yang tersedia</h1>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <form action="/" method="get">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Cari bookmark" aria-label="Recipient's username" aria-describedby="button-addon2" name="search" value="{{ request('search') }}">
+              <button class="btn btn-info text-light" type="submit" id="button-addon2">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
       @foreach ($bookmarks as $bookmark)
           <div class="col-lg-4 my-2">
               <div class="card">

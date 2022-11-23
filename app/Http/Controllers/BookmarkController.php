@@ -11,9 +11,9 @@ class BookmarkController extends Controller
 {
     public function index()
     {
-        return view('home', [
+       return view('home', [
             'title' => 'Home',
-            'bookmarks' => Bookmark::all()
+            'bookmarks' => Bookmark::with('category')->latest()->filter(request(['search']))->get()
         ]);
     }
     public function download(Bookmark $bookmark)
@@ -27,8 +27,8 @@ class BookmarkController extends Controller
     public function getAll()
     {
         return view('dashboard.bookmarks', [
-            'title' => 'Bookmarks',
-            'bookmarks' => Bookmark::all()
+            'title' => 'My Bookmarks',
+            'bookmarks' => Bookmark::with('category')->latest()->get()
         ]);
     }
     public function show(Bookmark $bookmark)

@@ -44,6 +44,8 @@ Route::post('/login', [UserController::class, 'authenticate']);
 Route::post('/logout', [UserController::class, 'logout']);
 // management bookmark
 Route::get('/dashboard', function() {
-    return view('dashboard.index');
+    return view('dashboard.index', [
+        'title' => 'Dashboard'
+    ]);
 })->middleware('auth');
 Route::get('/dashboard/bookmarks', [BookmarkController::class, 'getAll']);
