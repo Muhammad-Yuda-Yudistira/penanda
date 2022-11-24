@@ -15,7 +15,10 @@
       <h1 class="">Bookmark yang tersedia</h1>
       <div class="row justify-content-center">
         <div class="col-lg-6">
-          <form action="/" method="get">
+          <form action="" method="get">
+            @if (request('category'))
+               <input type="hidden" name="category" value="{{ request('category') }}"> 
+            @endif
             <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Cari bookmark" aria-label="Recipient's username" aria-describedby="button-addon2" name="search" value="{{ request('search') }}">
               <button class="btn btn-info text-light" type="submit" id="button-addon2">Search</button>
@@ -39,6 +42,7 @@
               </div>
           </div>
       @endforeach
+      {{ $bookmarks->links() }}
     </div>
 
     {{-- bagian how to use --}}

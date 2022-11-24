@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             "summary" => "Bookmark untuk web backend developer",
             "description" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, a voluptatem voluptatum quisquam quae ipsa saepe maiores dignissimos nostrum explicabo minus velit aliquam autem illo laborum maxime? Iusto, delectus illum?"
             ]);
-        Bookmark::factory(9)->create();
-        Category::factory(1)->create();
+        Bookmark::factory(29)->create();
+        Category::factory(4)->create();
     }
 }

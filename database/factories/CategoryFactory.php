@@ -17,7 +17,8 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            "name" => "web backend developer"
+            "name" => fake()->word(),
+            "slug" => fake()->slug(),
         ];
     }
 }

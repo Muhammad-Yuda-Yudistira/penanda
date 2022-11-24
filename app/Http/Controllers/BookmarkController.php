@@ -13,7 +13,7 @@ class BookmarkController extends Controller
     {
        return view('home', [
             'title' => 'Home',
-            'bookmarks' => Bookmark::with('category')->latest()->filter(request(['search']))->get()
+            'bookmarks' => Bookmark::with('category')->latest()->filter(request(['search', 'category']))->paginate(6)->withQueryString()
         ]);
     }
     public function download(Bookmark $bookmark)
