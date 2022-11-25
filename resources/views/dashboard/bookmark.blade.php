@@ -2,15 +2,19 @@
 
 @section('content')
 <div class="row justify-content-center">
-    <div class="col-lg-8">
+    <div class="col-lg-9">
         <h1>Detail Bookmark</h1>
         <table class="table table-info table-hover table-striped-columns table-sm table-borderless">
             <thead>
               <tr>
-                <th scope="col" colspan="2">Nama: {{ $bookmark->name }}</th>
+                <th scope="col" colspan="2">Bookmark</th>
               </tr>
             </thead>
             <tbody class="table-group-divider">
+                <tr>
+                  <th scope="row">Name:</th>
+                  <td>{{ $bookmark->name }}</td>
+                </tr>
                 <tr>
                   <th scope="row">Version:</th>
                   <td>{{ $bookmark->version }}</td>
@@ -18,6 +22,10 @@
                 <tr>
                   <th scope="row">Category:</th>
                   <td>{{ $bookmark->category->name }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">File bookmark:</th>
+                  <td>{{ asset('storage/' . $bookmark->file) }}</td>
                 </tr>
                 <tr>
                   <th scope="row">Created at:</th>

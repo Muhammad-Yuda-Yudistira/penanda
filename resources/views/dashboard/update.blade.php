@@ -4,7 +4,7 @@
 <div class="row justify-content-center">
     <div class="col-lg-8">
         <h1>{{ $title }}</h1>
-        <form action="/bookmarks/{{ $bookmark->slug }}" method="post">
+        <form action="/bookmarks/{{ $bookmark->slug }}" method="post" enctype="multipart/form-data">
             @method('put')
             @csrf
             <div class="mb-3">

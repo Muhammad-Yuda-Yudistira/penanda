@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId("category_id");
             $table->string("file");
             $table->string("summary");
-            $table->text("description");
+            $table->text("description")->nullable();
             $table->timestamps();
         });
     }

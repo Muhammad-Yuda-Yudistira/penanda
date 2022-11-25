@@ -18,11 +18,11 @@ class BookmarkController extends Controller
     }
     public function download(Bookmark $bookmark)
     {
-        $file = public_path('/files/').$bookmark->slug.".html";
+        $file = public_path('/storage/').$bookmark->file;
         $header = array(
             "Content-Type: application/html"
         );
-        return response()->download($file, $bookmark->slug.".html", $header);
+        return response()->download($file, $bookmark->slug.'.html', $header);
     }
     public function getAll()
     {
@@ -51,21 +51,23 @@ class BookmarkController extends Controller
     }
     public function store(Request $request)
     {
-        $bookmark = [
-            'name' => $request->name,
-            'slug' => $request->slug,
-            'version' => $request->version,
-            'file' => $request->slug.".html",
-            'summary' => $request->summary,
-            'description' => $request->description
+       $validateData = $request->validate([
+            'name' => 'required|max:255|min:3',
+            'slug' => 'required|max:255|min:3',
+            'version' => 'required|min:5',
+            'file' => 'file|max:1024',
+            'summary' => 'required|min:10|max:255',
+            'description' => 'nullable'
+        ]);
+        $validateCategory = [
+            'name' => $request->category,
+            'slug' => $request->category
         ];
-        $category = [
-            'name' => $request->category
-        ];
-        $categoryFilter = Category::where("name", $category)->get();
-        $bookmark["category_id"] = 1;
-        Category::create($category);
-        Bookmark::create($bookmark);
+        $categoryFilter = Category::where("name", $validateCategory)->get();
+        $validateData["category_id"] = 1;
+        $validateData["file"] = $request->file('file')->store('bookmark-file');
+        Category::create($validateCategory);
+        Bookmark::create($validateData);
         return redirect('/dashboard/bookmarks');
     }
     public function update(Bookmark $bookmark)
@@ -77,17 +79,20 @@ class BookmarkController extends Controller
     }
     public function storeUpdate(Request $request, Bookmark $bookmark)
     {
-        $newBookmark = [
-            'name' => $request->name,
-            'slug' => $request->slug,
-            'version' => $request->version,
-            'category_id' => $bookmark->category->id,
-            'file' => $request->slug.".html",
-            'summary' => $request->summary,
-            'description' => $request->description 
-        ];
+        $validateData = $request->validate([
+            'name' => 'required|max:255|min:3',
+            'slug' => 'required|max:255|min:3',
+            'version' => 'required|min:5',
+            'category_id' => 'required',
+            'file' => 'file|max:1024',
+            'summary' => 'required|min:10|max:255',
+            'description' => 'nullable'
+            
+        ]);
+        $validateData['category_id'] = $bookmark->category->id;
         $category = [
-            'name' => $request->category
+            'name' => $request->category,
+            'slug' => $request->category
         ];
         Bookmark::where('id', $bookmark->id)
                     ->update($newBookmark);
