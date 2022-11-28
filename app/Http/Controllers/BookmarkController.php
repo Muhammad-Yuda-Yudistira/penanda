@@ -6,6 +6,7 @@ use App\Models\Bookmark;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 
 class BookmarkController extends Controller
 {
@@ -68,7 +69,7 @@ class BookmarkController extends Controller
         $validateData["file"] = $request->file('file')->store('bookmark-file');
         Category::create($validateCategory);
         Bookmark::create($validateData);
-        return redirect('/dashboard/bookmarks');
+        return redirect('/dashboard/bookmarks')->with('success', 'Bookmark has creaated!');
     }
     public function update(Bookmark $bookmark)
     {
@@ -86,21 +87,31 @@ class BookmarkController extends Controller
             'category_id' => 'required',
             'file' => 'file|max:1024',
             'summary' => 'required|min:10|max:255',
-            'description' => 'nullable'
+            'description' => 'required'
             
         ]);
+        dd($validateData);
         $validateData['category_id'] = $bookmark->category->id;
+        if($request->file('file')) {
+            if($request->oldFile) {
+                Storage::delete($request->oldFile);
+            }
+            $validateData["file"] = $request->file('file')->store('bookmark-file');
+        }
         $category = [
             'name' => $request->category,
             'slug' => $request->category
         ];
         Bookmark::where('id', $bookmark->id)
-                    ->update($newBookmark);
-        return redirect('/dashboard/bookmarks');
+                    ->update($validateData);
+        return redirect('/dashboard/bookmarks')->with('update', 'Bookmark has updated!');
     }
     public function delete(Bookmark $bookmark)
     {
+        if($bookmark->file) {
+            Storage::delete($bookmark->file);
+        }
         Bookmark::destroy($bookmark->id);
-        return redirect('/dashboard/bookmarks');
+        return redirect('/dashboard/bookmarks')->with('delete', 'Bookmark has deleted!');
     }
 }
