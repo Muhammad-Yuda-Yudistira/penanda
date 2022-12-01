@@ -24,6 +24,10 @@ class User extends Authenticatable
     //     'password',
     // ];
     protected $guarded = ['id'];
+    public function bookmark()
+    {
+        return $this->hasMany(Bookmark::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

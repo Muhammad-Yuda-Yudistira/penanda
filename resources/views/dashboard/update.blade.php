@@ -50,6 +50,7 @@
             <div class="mb-3">
               <input type="hidden" name="oldFile" value="{{ $bookmark->file }}">
               <label for="file" class="form-label">Masukan file berekstensi html</label>
+              <p>{{ asset('storage/' . $bookmark->file) }}</p>
               <input class="form-control" type="file" id="file" name="file" value="{{ $bookmark->file }}">
               <div id="emailHelp" class="form-text">Pastikan file yang diupload namanya sama persis seperti slug yang anda isikan diatas. <span class="text-danger">*Jika tidak akan error.</span></span></div>
             </div>

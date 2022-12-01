@@ -8,7 +8,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard/bookmarks') ? 'active' : '' }}" href="/dashboard/bookmarks">
+            <a class="nav-link {{ Request::is('dashboard/bookmarks') ? 'active' : '' }}" href="/dashboard/bookmarks/{{ auth()->user()->id }}">
             <span data-feather="bookmark" class="align-text-bottom"></span>
             My Bookmarks
             </a>

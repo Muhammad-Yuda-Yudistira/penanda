@@ -34,9 +34,10 @@
               </tr>
             </thead>
             <tbody class="table-group-divider">
+              {{ $no = 1 }}
             @foreach($bookmarks as $bookmark)
                 <tr>
-                  <th scope="row">{{ $bookmark->id }}</th>
+                  <th scope="row">{{ $no++  }}</th>
                   <td>{{ $bookmark->name }}</td>
                   <td>{{ $bookmark->category->name }}</td>
                   <td>{{ $bookmark->summary }}</td>

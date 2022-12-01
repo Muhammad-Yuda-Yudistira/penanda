@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bookmark;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Storage;
@@ -25,11 +26,15 @@ class BookmarkController extends Controller
         );
         return response()->download($file, $bookmark->slug.'.html', $header);
     }
-    public function getAll()
+    public function getAll(User $user)
     {
         return view('dashboard.bookmarks', [
             'title' => 'My Bookmarks',
-            'bookmarks' => Bookmark::with('category')->latest()->get()
+            'bookmarks' => Bookmark::with('category')
+                        ->latest()
+                        ->where('user_id', $user->id)
+                        ->get()
+
         ]);
     }
     public function show(Bookmark $bookmark)
@@ -54,11 +59,11 @@ class BookmarkController extends Controller
     {
        $validateData = $request->validate([
             'name' => 'required|max:255|min:3',
-            'slug' => 'required|max:255|min:3',
+            'slug' => 'required|max:255|min:3|unique:bookmarks',
             'version' => 'required|min:5',
             'file' => 'file|max:1024',
             'summary' => 'required|min:10|max:255',
-            'description' => 'nullable'
+            'description' => 'required'
         ]);
         $validateCategory = [
             'name' => $request->category,
@@ -80,30 +85,33 @@ class BookmarkController extends Controller
     }
     public function storeUpdate(Request $request, Bookmark $bookmark)
     {
-        $validateData = $request->validate([
+        $rules = [
             'name' => 'required|max:255|min:3',
-            'slug' => 'required|max:255|min:3',
             'version' => 'required|min:5',
-            'category_id' => 'required',
             'file' => 'file|max:1024',
             'summary' => 'required|min:10|max:255',
             'description' => 'required'
-            
-        ]);
-        dd($validateData);
-        $validateData['category_id'] = $bookmark->category->id;
+        ];
+        $validateCategory = [
+            'name' => $request->category,
+            'slug' => $request->category
+        ];
+        $categoryFilter = Category::where("name", $validateCategory)->get();
+        $validateData["category_id"] = 1;
+        if(!$bookmark->slug) {
+            $rules['slug'] = 'required|max:255|min:3|unique:bookmarks';
+        }
+        $validateBookmark = $request->validate($rules);
         if($request->file('file')) {
             if($request->oldFile) {
                 Storage::delete($request->oldFile);
             }
-            $validateData["file"] = $request->file('file')->store('bookmark-file');
+            $validateBookmark["file"] = $request->file('file')->store('bookmark-file');
         }
-        $category = [
-            'name' => $request->category,
-            'slug' => $request->category
-        ];
+        Category::where('id', $bookmark->category_id)
+                    ->update($validateCategory);
         Bookmark::where('id', $bookmark->id)
-                    ->update($validateData);
+                    ->update($validateBookmark);
         return redirect('/dashboard/bookmarks')->with('update', 'Bookmark has updated!');
     }
     public function delete(Bookmark $bookmark)
