@@ -7,7 +7,7 @@
         <table class="table table-info table-hover table-striped-columns table-sm table-borderless">
             <thead>
               <tr>
-                <th scope="col" colspan="2">Bookmark</th>
+                <th scope="col" colspan="2">Bookmark had by: {{ $bookmark->user->name }}</th>
               </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -41,7 +41,7 @@
                 </tr>
             </tbody>
           </table>
-          <a href="/bookmarks">kembali</a>
+          <a href="/dashboard/bookmarks/{{ auth()->user()->id }}">kembali</a>
     </div>
 </div>
 @endsection
