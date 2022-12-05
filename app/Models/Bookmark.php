@@ -18,6 +18,11 @@ class Bookmark extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function user() 
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function sluggable(): array
     {
         return [
