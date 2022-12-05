@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
@@ -28,10 +29,9 @@ Route::get('/donation', [DonationController::class, 'index']);
 Route::get('/contacts', [ContactsController::class, 'index']);
 Route::get('/download/{bookmark:slug}', [BookmarkController::class, 'download']);
 // general bookmark
-Route::get('/bookmarks', [BookmarkController::class, 'getAll']);
 Route::get('/bookmarks/checkSlug', [BookmarkController::class, 'checkSlug']);
-Route::get('/bookmarks/create', [BookmarkController::class, 'create']);
-Route::get('/bookmarks/update/{bookmark:slug}', [BookmarkController::class, 'update']);
+Route::get('/bookmarks/create', [BookmarkController::class, 'create'])->middleware('auth');
+Route::get('/bookmarks/update/{bookmark:slug}', [BookmarkController::class, 'update'])->middleware('auth');
 Route::get('/bookmarks/{bookmark:slug}', [BookmarkController::class, 'show']);
 Route::post('/bookmarks', [BookmarkController::class, 'store']);
 Route::put('/bookmarks/{bookmark:slug}', [BookmarkController::class, 'storeUpdate']);
@@ -48,4 +48,5 @@ Route::get('/dashboard', function() {
         'title' => 'Dashboard'
     ]);
 })->middleware('auth');
-Route::get('/dashboard/bookmarks', [BookmarkController::class, 'getAll']);
+Route::get('/dashboard/bookmarks/{user:id}', [BookmarkController::class, 'getAll'])->middleware('auth');
+Route::resource('/dashboard/users', AdminController::class)->except(['show', 'store', 'create'])->middleware('admin');
